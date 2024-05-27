@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn/Screen/messageDetailScreen.dart';
 import 'Screen/messageScreen.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:  message(),
+      home:  MessageDetailScreen(nameUser: "Jules"),
     );
   }
 }
