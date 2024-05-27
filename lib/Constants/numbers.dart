@@ -1,3 +1,3 @@
 class NumbersConstant {
-  static int margin = 12;
+  static double margin = 15;
 }
