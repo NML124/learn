@@ -175,10 +175,7 @@ Widget titleMessage = Container(
               delegate: CustomSearch()
           );*/
         },
-        icon: const FaIcon(
-          FontAwesomeIcons.magnifyingGlass,
-          color: ColorsConstant.darkBlue
-        ),
+        icon: Icon(Icons.search),
       )
     ],
   ),
