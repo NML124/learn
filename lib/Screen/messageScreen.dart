@@ -4,7 +4,7 @@ import 'package:learn/Constants/colors.dart';
 import '../Constants/strings.dart';
 import '../Constants/textStyle.dart';
 import '../Constants/numbers.dart';
-import '../Widgets/cardMessage.dart';
+import '../Widgets/cardMessages.dart';
 
 class message extends StatefulWidget {
   const message({super.key});
@@ -152,7 +152,7 @@ class _messageState extends State<message> {
   ];
   @override
   Widget build(BuildContext context) {
-    return cardMessage(messages);
+    return cardMessages(messages);
   }
 }
 
