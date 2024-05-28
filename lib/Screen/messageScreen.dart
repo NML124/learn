@@ -4,6 +4,7 @@ import 'package:learn/Constants/colors.dart';
 import '../Constants/strings.dart';
 import '../Constants/textStyle.dart';
 import '../Constants/numbers.dart';
+import '../Widgets/cardMessage.dart';
 
 class message extends StatefulWidget {
   const message({super.key});
@@ -13,6 +14,7 @@ class message extends StatefulWidget {
 }
 
 class _messageState extends State<message> {
+
   final List messages = [
     {
       'senderProfile':'assets/images/avatar/default.png',
@@ -48,117 +50,195 @@ class _messageState extends State<message> {
       'message': 'Hello! how are you',
       'unRead': 0,
       'date': '07:31'
-    }
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
+    {
+      'senderProfile':'assets/images/avatar/default.png',
+      'senderName':'Stive',
+      'message': 'Hello! how are you',
+      'unRead': 3,
+      'date': '07:31'
+    },
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: titleMessage,
-      ),
-      body: messageArea(messages),
-    );
+    return cardMessage(messages);
   }
 }
 
 Widget titleMessage = Container(
-  color: Colors.green,
-  child: const Row(
+  margin: EdgeInsets.only(
+      top: 30,
+      bottom: NumbersConstant.margin
+  ),
+  child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
-      Text(
+      const Text(
         StringConstant.titleMessageScreen,
         style: AppTextStyles.titleText,
       ),
       IconButton(
-        onPressed: null,
-        icon: FaIcon(
-          FontAwesomeIcons.magnifyingGlass,
-          color: ColorsConstant.darkBlue
-        ),
+        onPressed: (){
+          /*showSearch(
+              context: context,
+              delegate: CustomSearch()
+          );*/
+        },
+        icon: Icon(Icons.search),
       )
     ],
   ),
 );
 
-Widget messageArea(List messages) {
-  return SingleChildScrollView(
-    child: Column(
-      children: messages.map((message) {
-        return InkWell(
-          onTap: (){},
-          child: Container(
-            padding: EdgeInsets.all(NumbersConstant.margin),
-            child: Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(right: 10),
-                  width: 62,
-                  height: 62,
-                  decoration: BoxDecoration(
-                      color: ColorsConstant.blackBlue,
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(message['senderProfile']),
-                      )
-                  ),
-                ),
-                Expanded(
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  message['senderName'],
-                                  style: AppTextStyles.subtitleText,
-                                ),
-                                Wrap(
-                                  children: [
-                                    Text(
-                                      message['message'],
-                                      style: AppTextStyles.bodyText,
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  message['date'],
-                                  style: AppTextStyles.bodyText,
-                                ),
-                                message['unRead'] != 0
-                                    ? Container(
-                                  padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                                  decoration: BoxDecoration(
-                                    color: ColorsConstant.blackBlue,
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: BorderRadius.all(Radius.circular(4)),
-                                  ),
-                                  child: Text(
-                                    message['unRead'].toString(),
-                                    style: AppTextStyles.bodyText,
-                                  ),
-                                )
-                                    : Container()
-                              ],
-                            )
-                          ],
-                        )
-                      ],
-                    )
-                )
-              ],
-            ),
-          ),
-        );
-      }).toList(), // Ajoutez .toList() ici pour convertir le résultat en List<Widget>
-    ),
-  );
+
+class CustomSearch extends SearchDelegate {
+  List<String> allData = [];
+  @override
+  List<Widget>? buildActions(BuildContext context) {
+    return [
+      IconButton(
+          onPressed: (){
+            query = '';
+          },
+          icon: const Icon(Icons.clear)
+      )
+    ];
+  }
+  @override
+  Widget? buildLeading(BuildContext context) {
+    return IconButton(
+        onPressed: (){
+          close(context, null);
+        },
+        icon: const Icon(Icons.arrow_back)
+    );
+  }
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var item in allData){
+      if(item.toLowerCase().contains(query.toLowerCase())){
+        matchQuery.add(item);
+      }
+    }
+    return ListView.builder(
+        itemBuilder: (context, index){
+          var result = matchQuery[index];
+          return ListTile(
+            title: Text(result),
+          );
+        },
+        itemCount: matchQuery.length,
+    );
+  }
+  @override
+  Widget buildResults(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var item in allData){
+      if (item.toLowerCase().contains(query.toLowerCase())){
+        matchQuery.add(item);
+      }
+    }
+    return ListView.builder(
+      itemCount: matchQuery.length,
+        itemBuilder: (context, index){
+          var result = matchQuery[index];
+          return ListTile (
+            title: Text(result),
+          );
+        }
+    );
+  }
 }
+

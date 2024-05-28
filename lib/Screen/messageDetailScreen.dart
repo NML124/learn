@@ -43,7 +43,7 @@ class _MessageDetailScreenState extends State<MessageDetailScreen> {
         ],
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: ColorsConstant.lightBlue,
         ),
         child: Container(
