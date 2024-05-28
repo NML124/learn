@@ -14,8 +14,9 @@ class AppTextStyles {
     fontWeight: FontWeight.w600, // SemiBold
   );
 
-  static const TextStyle bodyText = TextStyle(
+  static TextStyle bodyText(Color color) => TextStyle(
     fontFamily: 'Poppins',
     fontWeight: FontWeight.normal, // Regular
+    color: color,
   );
 }
