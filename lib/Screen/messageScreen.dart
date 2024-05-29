@@ -14,137 +14,136 @@ class message extends StatefulWidget {
 }
 
 class _messageState extends State<message> {
-
   final List messages = [
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 0,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 0,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
     },
     {
-      'senderProfile':'assets/images/avatar/default.png',
-      'senderName':'Stive',
+      'senderProfile': 'assets/images/avatar/default.png',
+      'senderName': 'Stive',
       'message': 'Hello! how are you',
       'unRead': 3,
       'date': '07:31'
@@ -152,15 +151,12 @@ class _messageState extends State<message> {
   ];
   @override
   Widget build(BuildContext context) {
-    return cardMessages(messages);
+    return Scaffold(body: cardMessages(messages));
   }
 }
 
 Widget titleMessage = Container(
-  margin: EdgeInsets.only(
-      top: 30,
-      bottom: NumbersConstant.margin
-  ),
+  margin: EdgeInsets.only(top: 30, bottom: NumbersConstant.margin),
   child: Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
@@ -169,7 +165,7 @@ Widget titleMessage = Container(
         style: AppTextStyles.titleText,
       ),
       IconButton(
-        onPressed: (){
+        onPressed: () {
           /*showSearch(
               context: context,
               delegate: CustomSearch()
@@ -181,64 +177,62 @@ Widget titleMessage = Container(
   ),
 );
 
-
 class CustomSearch extends SearchDelegate {
   List<String> allData = [];
   @override
   List<Widget>? buildActions(BuildContext context) {
     return [
       IconButton(
-          onPressed: (){
+          onPressed: () {
             query = '';
           },
-          icon: const Icon(Icons.clear)
-      )
+          icon: const Icon(Icons.clear))
     ];
   }
+
   @override
   Widget? buildLeading(BuildContext context) {
     return IconButton(
-        onPressed: (){
+        onPressed: () {
           close(context, null);
         },
-        icon: const Icon(Icons.arrow_back)
-    );
+        icon: const Icon(Icons.arrow_back));
   }
+
   @override
   Widget buildSuggestions(BuildContext context) {
     List<String> matchQuery = [];
-    for (var item in allData){
-      if(item.toLowerCase().contains(query.toLowerCase())){
+    for (var item in allData) {
+      if (item.toLowerCase().contains(query.toLowerCase())) {
         matchQuery.add(item);
       }
     }
     return ListView.builder(
-        itemBuilder: (context, index){
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
+      itemCount: matchQuery.length,
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var item in allData) {
+      if (item.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(item);
+      }
+    }
+    return ListView.builder(
+        itemCount: matchQuery.length,
+        itemBuilder: (context, index) {
           var result = matchQuery[index];
           return ListTile(
             title: Text(result),
           );
-        },
-        itemCount: matchQuery.length,
-    );
-  }
-  @override
-  Widget buildResults(BuildContext context) {
-    List<String> matchQuery = [];
-    for (var item in allData){
-      if (item.toLowerCase().contains(query.toLowerCase())){
-        matchQuery.add(item);
-      }
-    }
-    return ListView.builder(
-      itemCount: matchQuery.length,
-        itemBuilder: (context, index){
-          var result = matchQuery[index];
-          return ListTile (
-            title: Text(result),
-          );
-        }
-    );
+        });
   }
 }
-
