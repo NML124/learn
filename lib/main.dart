@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn/providers/messages.dart';
+import 'package:provider/provider.dart';
 import 'Screen/messageScreen.dart';
 
 void main() {
@@ -15,9 +17,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home:  message(),
+    return ChangeNotifierProvider(
+      create: (_) => Messages(),
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: messagesScreen(),
+      ),
     );
   }
 }

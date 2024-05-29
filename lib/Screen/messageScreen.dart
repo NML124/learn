@@ -1,157 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:learn/Constants/colors.dart';
+import 'package:learn/Widgets/listMessages.dart';
+import 'package:provider/provider.dart';
 import '../Constants/strings.dart';
 import '../Constants/textStyle.dart';
 import '../Constants/numbers.dart';
-import '../Widgets/cardMessages.dart';
+import '../providers/messages.dart';
 
-class message extends StatefulWidget {
-  const message({super.key});
+class messagesScreen extends StatefulWidget {
+  const messagesScreen({super.key});
 
   @override
-  State<message> createState() => _messageState();
+  State<messagesScreen> createState() => _messagesScreenState();
 }
 
-class _messageState extends State<message> {
-  final List messages = [
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 0,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 0,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-    {
-      'senderProfile': 'assets/images/avatar/default.png',
-      'senderName': 'Stive',
-      'message': 'Hello! how are you',
-      'unRead': 3,
-      'date': '07:31'
-    },
-  ];
+class _messagesScreenState extends State<messagesScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: cardMessages(messages));
+    var messages = Provider.of<Messages>(context).messages;
+    return Scaffold(
+      body: listMessages(messages),
+      appBar: AppBar(
+        title: Text(StringConstant.titleMessageScreen),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.search_rounded),
+          ),
+        ],
+      ),
+    );
   }
 }
 
