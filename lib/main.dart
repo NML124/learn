@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn/Constants/strings.dart';
 import 'package:learn/providers/messages.dart';
 import 'package:provider/provider.dart';
 import 'Screen/messageScreen.dart';
@@ -21,7 +22,9 @@ class _MyAppState extends State<MyApp> {
       create: (_) => Messages(),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: messagesScreen(),
+        home: Scaffold(
+          body: messagesScreen(),
+        ),
       ),
     );
   }

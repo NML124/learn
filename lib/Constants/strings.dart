@@ -1,4 +1,5 @@
 class StringConstant {
   static const String appName = "Learn";
-  static const String titleMessageScreen = "Message";
+  static const String message = "Message";
+  static const String profil = "Profil";
 }

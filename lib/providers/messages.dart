@@ -33,7 +33,61 @@ class Messages with ChangeNotifier {
         sender: User(id: "5", name: "Jordan", imageURL: "/"),
         Content: "Buenos",
         creationTime: DateTime.now(),
-        numberOfUnreadMessage: 15)
+        numberOfUnreadMessage: 15),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
+    Message(
+        id: "47",
+        sender: User(id: "2", name: "Francoise", imageURL: "/"),
+        Content: "Ca beigne ?",
+        creationTime: DateTime.now(),
+        numberOfUnreadMessage: 4),
   ];
 
   List<Message> get messages {

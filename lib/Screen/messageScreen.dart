@@ -19,11 +19,17 @@ class _messagesScreenState extends State<messagesScreen> {
     return Scaffold(
       body: ListMessages(),
       appBar: AppBar(
-        title: Text(StringConstant.titleMessageScreen),
+        title: Text(
+          StringConstant.message,
+          style: TextStyle(fontSize: NumbersConstant.fontSizeTitle),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.search_rounded),
+            icon: Icon(
+              Icons.search_rounded,
+              size: NumbersConstant.sizeButton,
+            ),
           ),
         ],
       ),
@@ -37,7 +43,7 @@ Widget titleMessage = Container(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       const Text(
-        StringConstant.titleMessageScreen,
+        StringConstant.message,
         style: AppTextStyles.titleText,
       ),
       IconButton(
