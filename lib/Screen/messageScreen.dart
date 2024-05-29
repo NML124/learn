@@ -16,9 +16,8 @@ class messagesScreen extends StatefulWidget {
 class _messagesScreenState extends State<messagesScreen> {
   @override
   Widget build(BuildContext context) {
-    var messages = Provider.of<Messages>(context).messages;
     return Scaffold(
-      body: listMessages(messages),
+      body: ListMessages(),
       appBar: AppBar(
         title: Text(StringConstant.titleMessageScreen),
         actions: [

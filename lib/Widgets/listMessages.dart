@@ -1,14 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:learn/models/message.dart';
+import 'package:learn/providers/messages.dart';
+import 'package:provider/provider.dart';
 
 import '../Constants/colors.dart';
 import '../Constants/numbers.dart';
 import '../Constants/textStyle.dart';
 
-Widget listMessages(List<Message> messages) {
-  return SingleChildScrollView(
-    child: Column(
-      children: messages.map((message) {
+class ListMessages extends StatelessWidget {
+  const ListMessages({super.key});
+
+  String formatDateTime(DateTime timeOfMessage) {
+    Duration timeElapsed = DateTime.now().difference(timeOfMessage);
+    if (timeElapsed.inMinutes > 1) {
+      if (timeElapsed.inMinutes > 59) {
+        if (timeElapsed.inHours > 23) {
+          if (timeElapsed.inDays > 13) {
+            return timeOfMessage.toString().substring(0, 10);
+          } else {
+            return "Il y a ${timeElapsed.inDays.toString()} j";
+          }
+        } else {
+          return "Il y a ${timeElapsed.inHours.toString()} h";
+        }
+      } else {
+        return "${timeElapsed.inMinutes.toString()} min";
+      }
+    } else {
+      return "maintenant";
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    List<Message> messages = Provider.of<Messages>(context).messages;
+    return ListView.builder(
+      itemBuilder: (ctx, index) {
+        int NumberUnread = messages[index].numberOfUnreadMessage;
+        String timeOfMessage = formatDateTime(messages[index].creationTime);
         return InkWell(
           onTap: () {},
           child: Container(
@@ -24,59 +53,58 @@ Widget listMessages(List<Message> messages) {
                       shape: BoxShape.circle,
                       image: DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage(message.sender.imageURL),
+                        image: NetworkImage(messages[index].sender.imageURL),
                       )),
                 ),
                 Expanded(
-                    child: Column(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              message.sender.name,
-                              style: AppTextStyles.subtitleText,
-                            ),
-                            Wrap(
-                              children: [
-                                Text(
-                                  message.Content,
-                                  style: AppTextStyles.bodyText(
-                                      ColorsConstant.darkBlue),
-                                )
-                              ],
-                            )
-                          ],
+                        Text(
+                          messages[index].sender.name,
+                          style: AppTextStyles.subtitleText,
                         ),
-                        Column(
+                        Wrap(
                           children: [
                             Text(
-                              message.creationTime.toString(),
+                              messages[index].Content,
                               style: AppTextStyles.bodyText(
                                   ColorsConstant.darkBlue),
-                            ),
-                            message.numberOfUnreadMessage != 0
-                                ? Container(
-                                    padding: EdgeInsets.only(
-                                        left: 10, right: 10, top: 5, bottom: 5),
-                                    decoration: BoxDecoration(
-                                      color: ColorsConstant.blackBlue,
-                                      shape: BoxShape.rectangle,
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(4)),
-                                    ),
-                                    child: Text(
-                                      message.numberOfUnreadMessage.toString(),
-                                      style: AppTextStyles.bodyText(
-                                          ColorsConstant.lightBlue),
-                                    ),
-                                  )
-                                : Container()
+                            )
                           ],
                         )
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          timeOfMessage,
+                          style:
+                              AppTextStyles.bodyText(ColorsConstant.darkBlue),
+                        ),
+                        NumberUnread != 0
+                            ? Container(
+                                padding: EdgeInsets.only(
+                                    left: 10, right: 10, top: 5, bottom: 5),
+                                decoration: BoxDecoration(
+                                  color: ColorsConstant.blackBlue,
+                                  shape: BoxShape.rectangle,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(4)),
+                                ),
+                                child: Text(
+                                  NumberUnread > 99
+                                      ? "+99"
+                                      : NumberUnread.toString(),
+                                  style: AppTextStyles.bodyText(
+                                      ColorsConstant.lightBlue),
+                                ),
+                              )
+                            : Container()
                       ],
                     )
                   ],
@@ -85,7 +113,8 @@ Widget listMessages(List<Message> messages) {
             ),
           ),
         );
-      }).toList(), // Ajoutez .toList() ici pour convertir le résultat en List<Widget>
-    ),
-  );
+      },
+      itemCount: messages.length,
+    );
+  }
 }
